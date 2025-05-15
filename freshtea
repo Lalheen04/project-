@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+ <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+                    <meta name="viewport" content="width=devicewidth,initial-scale = 1.0">
+                    <title>Responsive tea shop website design</title> 
+                    
+                    <!-- font awesome cdn link-->
+                    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+            
+                    <!-- custom css file link-->
+                    <link rel ="stylesheet" href="styles.css">
+            
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                   <style>@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@100;300;400;500;700&display=swap');
+
+                    :root{
+                        --main-color:#93d37f;
+                        --black:#13131a;
+                        --bg:#010103;
+                        --back:#121212;
+                        --border: .1rem solid #93d37f
+                    }
+                    
+                    *{
+                        font-family: 'Nunito', sans-serif;
+                        margin: 0;padding: 0;
+                        box-sizing: border-box;
+                        outline: none; border: none;
+                        text-decoration: none;
+                        text-transform: capitalize;
+                        transition: .2s linear;
+                    }
+                    
+                    html{
+                        font-size: 62.5%;
+                        overflow-x: hidden;
+                        scroll-padding-top: 144px;
+                        scroll-behavior: smooth;
+                    }
+                    
+                    html::-webkit-scrollbar{
+                        width: .8rem;
+                    }
+                    
+                    html::-webkit-scrollbar-track{
+                        background: transparent;
+                    }
+                    
+                    html::-webkit-scrollbar-thumb{
+                        background: var(--main-color);
+                        border-radius: 5rem;
+                    }
+                    
+                    body{
+                        background: var(--back) ;   
+                    }
+                    
+                    section{
+                        padding: 2rem 7%;
+                    }
+                    
+                    .heading{
+                        text-align: center;
+                        text-transform: uppercase;
+                        color: #fff;
+                        padding-bottom: 3.5rem;
+                        font-size: 4rem;
+                    }
+                    
+                    .heading span{
+                        color: var(--main-color);
+                        text-transform: uppercase;
+                    }
+                    .btn{
+                        margin-top: 1rem;
+                        display: inline-block;
+                        padding: .9rem 3rem;
+                        font-size: 1.8rem;
+                        font-weight: bold;
+                        color: var(--black);
+                        background-color: var(--main-color);
+                        cursor: pointer;
+                    }
+                    
+                    .btn:hover{
+                        letter-spacing: .2rem;
+                    }
+                    
+                    .header{
+                        background: var(--back);
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 1.5rem 7%;
+                        border-bottom: var(--border);
+                        position: fixed;
+                        top: 0;left: 0;right: 0;
+                        z-index: 1000;
+                    }
+                    
+                    .header .logo img{
+                        height: 6rem;
+                    }
+                    
+                    .header .navbar a{
+                        margin: 0 1rem;
+                        font-size: 1.6rem;
+                        color: #fff;
+                    }
+                    
+                    .header .navbar a:hover{
+                        color: var(--main-color);
+                        border-bottom: .1rem solid var(--main-color);
+                        padding-bottom: .5rem;
+                    }
+                    
+                    .header .icons div{
+                        color: #fff;
+                        cursor: pointer;
+                        font-size: 2.5rem;
+                        margin-left: 2rem;
+                    }
+                    
+                    .header .icons div:hover{
+                        color: var(--main-color);   
+                    }
+                    
+                    #menu-btn{
+                        display: none;
+                    }
+                    
+                    .header .search-form{
+                        position: absolute;
+                        top: 115%;right: 7%;
+                        background: #fff;
+                        width: 50rem;
+                        height: 5rem;
+                        display: flex;
+                        align-items: center;
+                        transform: scaleY(0);
+                        transform-origin: top;
+                    }
+                    
+                    .header .search-form.active{
+                        transform: scaleY(1);
+                    }
+                    
+                    .header .search-form input{
+                        height: 100%;
+                        width: 100%;
+                        font-size: 1.6rem;
+                        color:var(--black);
+                        padding: 1rem;
+                        text-transform: none;
+                    }
+                    
+                    .header .search-form label{
+                        cursor: pointer;
+                        font-size: 2.2rem;
+                        margin-right: 1.5rem;
+                        color: var(--black);
+                    }
+                    
+                    .header .search-form label:hover{
+                        color: var(--main-color);
+                    }
+                    
+                    .header .cart-items-container{
+                        position: absolute;
+                        top: 100%;right: -100%;
+                        height: calc(100vh - 9.5rem);
+                        width: 35rem;
+                        background: #fff;
+                        padding:0 1.5rem ;
+                    }
+                    
+                    .header .cart-items-container.active{
+                        right: 0;
+                    }
+                    
+                    .header .cart-items-container .cart-item{
+                        position: relative;
+                        margin: 2rem 0;
+                        display: flex;
+                        align-items: center;
+                        gap: 1.5rem;
+                    }
+                    
+                    .header .cart-items-container .cart-item .fa-times{
+                        position: absolute;
+                        top: 1rem; right: 1rem;
+                        font-size: 2rem;
+                        cursor: pointer;
+                        color: var(--black);
+                    
+                    }
+                    
+                    .header .cart-items-container .cart-item .fa-times:hover{
+                        color: var(--main-color);
+                    }
+                    .header .cart-items-container .cart-item img{
+                        height: 7rem;
+                    }
+                    
+                    .header .cart-items-container .cart-item .content h3{
+                        font-size: 2rem;
+                        color: var(--black);
+                        padding-bottom: .5rem;
+                    }
+                    
+                    .header .cart-items-container .cart-item .content price{
+                        font-size: 1.5rem;
+                        color: var(--main-color);  
+                    }
+                    
+                    .header .cart-items-container .btn{
+                        width: 100%;
+                        text-align: center;
+                    }
+                    
+                    .home{
+                        min-height: 100vh;
+                        display: flex;
+                        align-items: center; 
+                        background: url(../images/home-green-tea_v1.jpg) no-repeat;
+                        /*background: url(../images/tea-home.jpg) no-repeat;*/
+                        /*background: url(https://www.onmanorama.com/content/dam/mm/en/food/features/images/2022/3/15/tea.jpg.transform/onm-articleimage/image.jpg);*/
+                        /*background: url(https://cdn.pixabay.com/photo/2017/05/18/21/39/teacup-2324842_960_720.jpg) no-repeat;*/
+                        
+                        background-size: cover;
+                        background-position: center;
+                    }
+                    
+                    .home .content{
+                        max-width: 60rem;
+                    }
+                    
+                    .home .content h3{
+                        font-size: 6rem;
+                        text-transform: uppercase;
+                        color: #fff;
+                    }
+                    
+                    .home .content p{
+                        font-size: 3rem;
+                        font-weight: bold;
+                        line-height: 1.8;
+                        padding: 1rem 0;
+                        color:white;
+                    }
+                    
+                    .about .row{
+                        display: flex;
+                        align-items: center;
+                        background: var(--black);
+                        flex-wrap: wrap;
+                    }
+                    
+                    .about .row .image{
+                        flex: 1 1 45rem;
+                    }
+                    
+                    .about .row .image img{
+                        width: 100%;
+                    }
+                    
+                    .about .row .content{
+                        flex: 1 1 45rem;
+                        padding: 2rem;
+                    }
+                    
+                    .about .row .content h3{
+                        font-size: 3rem;
+                        color: #fff;
+                    }
+                    
+                    .about .row .content p{
+                        font-size: 2rem;
+                        color: #ccc;
+                        padding: 1rem 0;
+                        line-height: 1.8;
+                        text-align: justify;
+                    }
+                    
+                    .menu .box-container{
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+                        gap:1rem ;
+                    }
+                    
+                    .menu .box-container .box{
+                        padding: 5rem;
+                        text-align: center;
+                        border: var(--border);
+                    }
+                    
+                    .menu .box-container .box img{
+                        height: 10rem;
+                    }
+                    
+                    .menu .box-container .box h3{
+                        color: #fff;
+                        font-size: 2rem;
+                        padding: 1rem 0;
+                    }
+                     
+                    .menu .box-container .box .price{
+                        color: #fff;
+                        font-size: 2.5rem;
+                        padding: .5rem 0;
+                    }
+                    
+                    .menu .box-container .box .price span{
+                        color: #fff;
+                        font-size: 1.5rem;
+                        text-decoration: line-through;
+                        font-weight: lighter;
+                    }
+                    
+                    .menu .box-container .box:hover{
+                        background: #fff;
+                    }
+                    
+                    .menu .box-container .box:hover > * {
+                        color: var(--black);
+                    }
+                    
+                    .products .box-container{
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+                        gap:1.5rem;
+                    }
+                    
+                    .products .box-container .box{
+                        text-align: center;
+                        border: var(--border);
+                        padding: 2rem;
+                    }
+                    
+                    .products .box-container .box .icons a{
+                         height: 5rem;
+                         width: 5rem;
+                         line-height: 5rem;
+                         font-size: 2rem;
+                         border: var(--border);
+                         color: #fff;
+                         margin: .3rem;
+                    }
+                    
+                    .products .box-container .box .icons a:hover{
+                        background: var(--main-color);
+                    }
+                    
+                    .products .box-container .box .image{
+                        padding:2.5rem;
+                    }
+                    
+                    .products .box-container .box .image img{
+                        height: 25rem;
+                    }
+                    
+                    .products .box-container .box .content h3{
+                        color: #fff;
+                        font-size: 2.5rem;
+                    }
+                    
+                    .products .box-container .box .content .stars{
+                        color: #fff;
+                        padding: 1.5rem;
+                    }
+                    
+                    .products .box-container .box .stars i{
+                        font-size: 1.7rem;
+                        color: var(--main-color);
+                    }
+                    
+                    .products .box-container .box .price{
+                        color: #fff;
+                        font-size: 2.5rem;   
+                    }
+                    
+                    .products .box-container .box .price span{
+                        text-decoration: line-through;
+                        font-weight: lighter;
+                        font-size: 1.5rem;
+                    }
+                    
+                    
+                    .review .box-container{
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+                        gap: 1.5rem;
+                    }
+                    
+                    .review .box-container .box{
+                        border: var(--border);
+                        text-align: center;
+                        padding:3rem 2rem;
+                    }
+                    
+                    .review .box-container .box p{
+                        font-size: 1.6rem;
+                        line-height: 1.8;
+                        color: #ccc;
+                        padding: 2rem 0;
+                    }
+                    
+                    .review .box-container .box .user{
+                        height: 7rem;
+                        width: 7rem;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                    
+                    .review .box-container .box h3{
+                        padding: 1rem 0;
+                        font-size: 2rem;
+                        color: #fff;
+                    }
+                    
+                    .review .box-container .box i{
+                        font-size: 1.5rem;
+                        color: var(--main-color);
+                    }
+                    
+                    .contacts .table-container{
+                        padding: 0 10%;
+                        margin: 40px auto;
+                    }
+                    
+                    .contacts .table-container .table{
+                        width: 100%;
+                        border-collapse: collapse;
+                        border-color: var(--border);
+                    }
+                    
+                    .contacts .table-container .table thead{
+                        background-color: var(--main-color);
+                    }
+                    
+                    .contacts .table-container .table thead tr th{
+                        font-size: 14px;
+                        font-weight: medium;
+                        letter-spacing: 0.35px;
+                        padding: 12px;
+                        vertical-align: top;
+                        border: 1px solid #13131a;
+                        
+                    }
+                    
+                    .contacts .table-container .table tbody tr td{
+                        font-size: 14px;
+                        letter-spacing: 0.35px;
+                        font-weight: normal;
+                        color: #fff;
+                        background-color: #3c3f44;
+                        text-align: center;
+                        padding: 8px;
+                        border: 1px solid #93d37f;
+                    }
+                    
+                    
+                    .contacts .table-container .table a{
+                        text-transform: lowercase;
+                    }
+                    
+                    .footer{
+                        background: var(--black);
+                        text-align: center;
+                    }
+                    
+                    .footer .share{
+                        padding: 1rem 0;
+                    }
+                    
+                    .footer .share a{
+                        height: 5rem;
+                        width: 5rem;
+                        line-height: 5rem;
+                        font-size: 2rem;
+                        color: #fff;
+                        border: var(--border);
+                        margin: 3rem;
+                        border-radius: 50%;
+                    }
+                    
+                    .footer .share a:hover{
+                        background-color: var(--main-color);
+                    }
+                    
+                    
+                    .footer .links a{
+                        padding: .7rem 2rem;
+                        color: #fff;
+                        border:var(--border);
+                        font-size: 2rem;
+                    }
+                    
+                    .footer .links a:hover{
+                        background: var(--main-color);
+                    }
+                    
+                    .footer .credit{
+                        font-size: 2rem;
+                        color: #fff;
+                        font-weight:lighter;
+                        padding: 2.5rem;
+                    }
+                    
+                    .footer .credit span{
+                        color: var(--main-color);
+                    }
+                    
+                    /*media quaries*/
+                    @media(max-width:1920px){
+                        html{
+                            font-size: 55%;
+                        }
+                    
+                        .header{
+                            padding: 1.5rem 2rem;
+                        }
+                    }
+                    
+                    @media(max-width:768px) {
+                        #menu-btn{
+                            display: inline-block;
+                        }
+                        
+                        .header .navbar{
+                            position: absolute;
+                            top: 100%; right: -100%;
+                            background: #fff;
+                            width: 30rem;
+                            height: calc(100vh - 9.5rem);
+                        }
+                    
+                        .header .navbar.active{
+                            right: 0;
+                        }
+                    
+                    
+                        .header .navbar a{
+                            color: var(--black);
+                            display: block;
+                            margin: 1.5rem;
+                            padding: .5rem;
+                            font-size: 2rem;
+                        }
+                    
+                        .header .search-form{
+                            width: 90%;
+                            right: 2rem;
+                        }
+                    
+                        .home {
+                            background-position: left;
+                            justify-content: center;
+                            text-align: center;
+                        }
+                    
+                        .home .content h3{
+                            font-size: 4.5rem;
+                    
+                        }
+                    
+                        .home .content p{
+                            font-size: 1.5rem;
+                        }
+                    
+                        .contacts .table-container .table thead{
+                            display: none;
+                        }
+                    
+                        .contacts .table-container .table, .contacts .table-container .table tbody, .contacts .table-container .table tr,.contacts .table-container .table td {
+                            display: block;
+                            width: 100%;
+                        }
+                    
+                        .contacts .table-container .table  tr{
+                            margin-bottom: 15px;
+                        }
+                    
+                        .contacts .table-container .table tbody tr td{
+                            text-align: left;
+                            padding-left: 50%;
+                            position: relative;
+                        }
+                    
+                        .contacts .table-container .table td::before{
+                            content: attr(data-label);
+                            position: absolute;
+                            left: 0;
+                            width: 50%;
+                            padding-left: 15px;
+                            font-weight: 500;
+                            text-align: left;
+                            font-size: 14px;
+                        }
+                    }
+                    
+                    @media(max-width:450px){
+                        html{
+                            font-size: 50%;
+                        }
+                    
+                    }</style>
+                </head>
+            
+                <body>
+            
+                    <!--header section start-->
+                    <header class="header">
+                        <a href="" class="logo">
+                            <img src = "images/logo.png"  alt ="log" >         
+                        </a>
+            
+                        <nav class="navbar">
+                            <a href="home">Home</a>
+                            <a href="about">About</a>
+                            <a href="menu">Menu</a>
+                            <a href="products">Products</a>
+                            <a href="review">Review</a>
+                            <a href="contacts">Contact US</a>
+                        </nav>
+            
+                        <div class="icons">
+                            <div class="fas fa-search" id="search-btn"></div>
+                            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+                            <div class="fas fa-bars" id="menu-btn"></div>
+                        </div>
+            
+                        <div class = "search-form">
+                            <input type="search" id="search-box" placeholder="search here...">
+                            <label for="search-box" class="fas fa-search"></label>
+                        </div>
+            
+                        <div class="cart-items-container">
+                            <div class="cart-item">
+                                <span class="fas fa-times"></span>
+                                <img src="images/cart-item-1.png" alt="">
+                                <div class="content">
+                                    <h3>cart item 01</h3>
+                                    <div class="price">₱15.00</div>
+                                </div>
+                            </div>
+            
+                            <div class="cart-item">
+                                <span class="fas fa-times"></span>
+                                <img src="images/cart-item-2.png" alt="">
+                                <div class="content">
+                                    <h3>cart item 02</h3>
+                                    <div class="price">₱15.00</div>
+                                </div>
+                            </div>
+            
+                            <div class="cart-item">
+                                <span class="fas fa-times"></span>
+                                <img src="images/cart-item-3.png" alt="">
+                                <div class="content">
+                                    <h3>cart item 03</h3>
+                                    <div class="price">₱15.00</div>
+                                </div>
+                            </div>
+            
+                            <div class="cart-item">
+                                <span class="fas fa-times"></span>
+                                <img src="images/cart-item-4.png" alt="">
+                                <div class="content">
+                                    <h3>cart item 04</h3>
+                                    <div class="price">₱15.00</div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn">checkout now</a>
+                        </div>
+            
+                    </header>
+                    <!--header section end-->
+            
+                    <!--home section starts-->
+            
+                    <section class="home" id="home">
+                        <div class="content">
+                            <h3>fresh tea in the morning</h3>
+                            <p>The tea must be exclusively packed in Philippines.</p>
+                            <a href="#" class="btn">get yours now</a>
+                        </div>
+                    </section>
+                    <!--home section ends-->
+            
+                    <!--about section starts-->
+                    
+                    <section class="about" id="about">
+                        <h1 class="heading"><span>about</span> us</h1>
+                        <div class="row">
+                            <div class="image">
+                                <!--<img src = "F:\Coursera\HTML5\images\pexels-hasan-albari-1493080.jpg" alt="">-->
+                                <img src = "https://imageio.forbes.com/specials-images/imageserve/5f6c061ca71799093f55fd02/Aromatic-herbal-tea-/0x0.jpg?fit=crop&format=jpg&crop=5029,3354,x0,y0,safe" alt ="">
+                            </div>
+            
+                            <div class="content">
+                                <h3>what makes our tea special?</h3>
+                                <p>Our drink black tea very strong with milk and sugar. 
+                                    Sharing a pot in the afternoon is a common way to wind down from a busy day. The tea of choice in most households is the strong black tea, commonly called “Ceylon Tea”. 
+                                    Since tea is so important in Philippines, there are a few specialized tea houses where you can try not only the usual teas but also some new blends and tea cocktails. 
+                                    Visit the Philippines for the best tea experience.</p>
+            
+                                <button class="btn" id = "learn-more">learn more</button>
+                                <!--<a href="#" class="btn" id = "learn-more">learn more</a>-->
+                                <div id = leran_more_content><p></p></div>
+                            </div>
+            
+                        </div>
+                    </section>
+                    <!--about section ends-->
+            
+                    <!--menu section starts-->
+                    <section class="menu" id="menu">
+                        <h1 class="heading"> our <span>menu</span></h1>
+                        <div class="box-container">
+                            <div class="box">
+                                <img src = "images/menu-1.png" alt="">
+                                <h3>tasty and healthy</h3>
+                                <div class="price">₱15.00 <span>20.00</span></div>
+                                <a href="#" class="btn">add to cart</a>
+                            </div>
+                            
+                            <div class="box">
+                                <img src = "images/menu-2.png" alt="">
+                                <h3>tasty and healthy</h3>
+                                <div class="price">₱15.00 <span>20.00</span></div>
+                                <a href="#" class="btn">add to cart</a>
+                            </div>
+            
+                            <div class="box">
+                                <img src = "images/menu-3.png" alt ="">
+                                <h3>tasty and healthy</h3>
+                                <div class="price">₱15.00 <span>20.00</span></div>
+                                <a href="#" class="btn">add to cart</a>
+                            </div>
+                            
+                            <div class="box">
+                                <img src = "images/menu-4.png" alt ="">
+                                <h3>tasty and healthy</h3>
+                                <div class="price">₱15.00 <span>20.00</span></div>
+                                <a href="#" class="btn">add to cart</a>
+                            </div>
+            
+                            <div class="box">
+                                <img src = "images/menu-5.png" alt ="">
+                                <h3>tasty and healthy</h3>
+                                <div class="price">₱15.00 <span>20.00</span></div>
+                                <a href="#" class="btn">add to cart</a>
+                            </div>
+            
+                            <div class="box">
+                                <img src = "images/menu-6.png" alt ="">
+                                <h3>tasty and healthy</h3>
+                                <div class="price">₱15.00 <span>20.00</span></div>
+                                <a href="#" class="btn">add to cart</a>
+                            </div>
+                        </div>
+                    </section>
+                    <!--menu section ends-->
+            
+                    <!--products section strats-->
+                    <section class="products" id="products">
+                        <h1 class="heading"> our <span> products</span></h1>
+                        <div class="box-container">
+            
+                            <div class="box">                  
+                                <div class="icons">
+                                    <a href="#" class="fas fa-shopping-cart"></a>
+                                    <a href="#" class="fas fa-heart"></a>
+                                    <a href="#" class="fas fa-eye"></a>
+                                </div>
+                                <div class="image">
+                                    <img src ="images/ctea-tea-products-Hover-pekoe1.png" alt = "">
+                                </div>
+                                <div class="content">
+                                    <h3>cee tea hills</h3>
+                                    <div class="stars">
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                         <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star-half-alt" ></i>
+                                    </div>
+                                    <div class="price">₱15.00 <span>₱20.00</span></div>
+                                </div>
+                            </div>
+            
+                            <div class="box">
+                                <div class="icons">
+                                    <a href="#" class="fas fa-shopping-cart"></a>
+                                    <a href="#" class="fas fa-heart"></a>
+                                    <a href="#" class="fas fa-eye"></a>
+                                </div>
+                                <div class="image">
+                                    <img src ="images/ctea-tea-products-Hover-ceylon-sup.png" alt = "">
+                                </div>
+                                <div class="content">
+                                    <h3>ceylon suprem</h3>
+                                    <div class="stars">
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star-half-alt" ></i>
+                                    </div>
+                                    <div class="price">₱15.00 <span>₱20.00</span></div>
+                                </div>
+                            </div>
+             
+                            <div class="box">
+                                <div class="icons">
+                                    <a href="#" class="fas fa-shopping-cart"></a>
+                                    <a href="#" class="fas fa-heart"></a>
+                                    <a href="#" class="fas fa-eye"></a>
+                                </div>
+                                <div class="image">
+                                    <img src ="images/ctea-tea-products-Hover-Nilidiya-valley1.png" alt = "">
+                                </div>
+                                <div class="content">
+                                    <h3>nildiya valley</h3>
+                                    <div class="stars">
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star" ></i>
+                                        <i class="fa fa-star-half-alt" ></i>
+                                    </div>
+                                    <div class="price">₱15.00 <span>₱20.00</span></div>
+                                </div>
+                            </div>
+            
+                        </div>
+                    </section>
+                    <!--products section ends-->
+            
+                    <!--review section stats-->
+                    <section class="review" id="review">
+                        <h1 class="heading"> cutomer' s<span> review </span></h1>
+                        <div class="box-container">
+                            <div class="box">
+                                <img src="images/quote-img.png" alt="" class="quote">
+                                <p>The aroma is a medium woodsy. Dark, twisted leaves. 
+                                    The liquor, after a five minute steep, is a very dark brown. 
+                                    Flavor is good, with a mild spicy after taste. 
+                                    This tea will be added to my regular rotation. Easy to sip all day.</p>
+                                <img src="images/pic-1.png" alt="" class="user">
+                                <h3>Lalheen Delas alas</h3>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+            
+                            <div class="box">
+                                <img src="images/quote-img.png" alt="" class="quote">
+                                <p>The store had a wide variety of tea on sale and I would say the price is reasonably priced. 
+                                    They have tea that comes in the form of loose tea leafs, enveloped tea bags as well as pyramid tea bags (limited). 
+                                    They also have different types of Ceylonese tea (i.e. BOP, Orange Pekoe, etc). 
+                                    The staff will not do hard selling and will not give you any recommendations 
+                                    - leaving you with some alone time to choose the tea on your own, which I prefer.</p>
+                                <img src="images/pic-2.png" alt="" class="user">
+                                <h3>Ivy jane Nabual</h3>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+            
+                            <div class="box">
+                                <img src="images/quote-img.png" alt="" class="quote">
+                                <p>Great collection of tea, gift collection at reasonable prices. 
+                                    A few mugs and souvenirs and tea sets but astronomical prices. 
+                                    Good place to stock up on Ceylon tea as well as English tea for your family.</p>
+                                <img src="images/pic-3.png" alt="" class="user">
+                                <h3>Jheramae Mabignay</h3>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </section>
+                    <!--review section ends-->
+            
+                    <!--footer section starts-->
+                    <section class="footer">
+                        <div class="share">
+                            <a href ="" class="fab fa-facebook-f"></a>
+                            <a href ="" class="fab fa-twitter"></a>
+                            <a href ="" class="fab fa-instagram"></a>
+                            <a href ="" class="fab fa-linkedin"></a>
+                            <a href ="" class="fab fa-whatsapp"></a>
+                        </div>
+            
+                        <div class="links">
+                            <a href="home">Home</a>
+                            <a href="about">About</a>
+                            <a href="menu">Menu</a>
+                            <a href="products">Products</a>
+                            <a href="review">Review</a>
+                            <a href="contacts">Contact US</a>
+                        </div>
+                        
+                        <div class="credit">credited by <span>All of us in the group</span> | all rights reserved</div>
+                    </section>
+                    <!-- custom js file link-->
+                    <script type = "text/javascript"  src = "tea_javascript.js"></script>
+                </body>
+            </html> </style>
+        
+    </head>
+
+    <body>
+
+        <!--header section start-->
+        <header class="header">
+            <a href="" class="logo">
+                <img src = "images/logo.png"  alt ="log" >         
+            </a>
+
+            <nav class="navbar">
+                <a href="home">Home</a>
+                <a href="about">About</a>
+                <a href="menu">Menu</a>
+                <a href="products">Products</a>
+                <a href="review">Review</a>
+                <a href="contacts">Contact US</a>
+            </nav>
+
+            <div class="icons">
+                <div class="fas fa-search" id="search-btn"></div>
+                <div class="fas fa-shopping-cart" id="cart-btn"></div>
+                <div class="fas fa-bars" id="menu-btn"></div>
+            </div>
+
+            <div class = "search-form">
+                <input type="search" id="search-box" placeholder="search here...">
+                <label for="search-box" class="fas fa-search"></label>
+            </div>
+
+            <div class="cart-items-container">
+                <div class="cart-item">
+                    <span class="fas fa-times"></span>
+                    <img src="images/cart-item-1.png" alt="">
+                    <div class="content">
+                        <h3>cart item 01</h3>
+                        <div class="price">₱15.00</div>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <span class="fas fa-times"></span>
+                    <img src="images/cart-item-2.png" alt="">
+                    <div class="content">
+                        <h3>cart item 02</h3>
+                        <div class="price">₱15.00</div>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <span class="fas fa-times"></span>
+                    <img src="images/cart-item-3.png" alt="">
+                    <div class="content">
+                        <h3>cart item 03</h3>
+                        <div class="price">₱15.00</div>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <span class="fas fa-times"></span>
+                    <img src="images/cart-item-4.png" alt="">
+                    <div class="content">
+                        <h3>cart item 04</h3>
+                        <div class="price">₱15.00</div>
+                    </div>
+                </div>
+                <a href="#" class="btn">checkout now</a>
+            </div>
+
+        </header>
+        <!--header section end-->
+
+        <!--Contact section staets-->
+        <section class="contacts" id="contacts">
+            <h1 class="heading">contact <span> us</span></h1>
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>contact person</th>
+                            <th>contact number</th>
+                            <th>email address</th>
+                            <th>>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="contact person">Anthony Reyes</td>
+                            <td data-label="contact number">09 71 788 8031</td>
+                            <td data-label="email address"><a style = "color:rgb(12, 9, 9)" href="www.gmail.com/anthonyreyes.com">anthonyreyes@gmail.com</a></td>
+                            <td data-label=""><a href ="" class = "btn"> Contact <span>now</span></a></td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="contact person">Karla babon</td>
+                            <td data-label="contact number">09 70 149 2033</td>
+                            <td data-label="email address"><a style = "color:rgb(12, 11, 10)" href="karlababon.com">karlababon@gmail.com</a></td>
+                            <td data-label=""><a href ="" class = "btn"> Contact <span>now</span></a></td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="contact person">jane uy</td>
+                            <td data-label="contact number">09 70 149 2035</td>
+                            <td data-label="email address"><a style = "color:rgb(34, 22, 6)" href="janeuy.com">janeuy@gmail.com</a></td>
+                            <td data-label=""><a href ="" class = "btn"> Contact <span>now</span></a></td>
+                        </tr>
+                    </tbody>
+                </table>                
+            </div>
+        </section>
+        add
+        <!--contact section ends-->
+
+        <!--footer section starts-->
+        <section class="footer">
+            <div class="share">
+                <a href ="" class="fab fa-facebook-f"></a>
+                <a href ="" class="fab fa-twitter"></a>
+                <a href ="" class="fab fa-instagram"></a>
+                <a href ="" class="fab fa-linkedin"></a>
+                <a href ="" class="fab fa-whatsapp"></a>
+            </div>
+
+            <div class="links">
+                <a href="home">Home</a>
+                <a href="about">About</a>
+                <a href="menu">Menu</a>
+                <a href="products">Products</a>
+                <a href="review">Review</a>
+                <a href="contacts">Contact US</a>
+            </div>
+            
+            <div class="credit">creditrd by <span>all of us in the group</span> | all rights reserved</div>
+        </section>
+        <!-- custom js file link-->
+        <script type = "text/javascript"  src = "tea_javascript.js"></script>
+    </body>
+</html> 
