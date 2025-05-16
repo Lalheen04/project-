@@ -2,74 +2,74 @@
  <html lang="en">
         <head>
         <meta charset="UTF-8">
-                    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-                    <meta name="viewport" content="width=devicewidth,initial-scale = 1.0">
-                    <title>Responsive tea shop website design</title> 
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=devicewidth,initial-scale = 1.0">
+        <title>Responsive tea shop website design</title> 
                     
-                    <!-- font awesome cdn link-->
-                    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+        <!-- font awesome cdn link-->
+        <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
             
-                    <!-- custom css file link-->
-                    <link rel ="stylesheet" href="styles.css">
+        <!-- custom css file link-->
+        <link rel ="stylesheet" href="styles.css">
             
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-                   <style>@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@100;300;400;500;700&display=swap');
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@100;300;400;500;700&display=swap');
 
-                    :root{
-                        --main-color:#93d37f;
-                        --black:#13131a;
-                        --bg:#010103;
-                        --back:#121212;
-                        --border: .1rem solid #93d37f
+            :root{
+                 --main-color:#93d37f;
+                 --black:#13131a;
+                 --bg:#010103;
+                 --back:#121212;
+                 --border: .1rem solid #93d37f
                     }
                     
-                    *{
-                        font-family: 'Nunito', sans-serif;
-                        margin: 0;padding: 0;
-                        box-sizing: border-box;
-                        outline: none; border: none;
-                        text-decoration: none;
-                        text-transform: capitalize;
-                        transition: .2s linear;
+             *{
+                 font-family: 'Nunito', sans-serif;
+                 margin: 0;padding: 0;
+                 box-sizing: border-box;
+                 outline: none; border: none;
+                 text-decoration: none;
+                 text-transform: capitalize;
+                 transition: .2s linear;
                     }
                     
-                    html{
-                        font-size: 62.5%;
-                        overflow-x: hidden;
-                        scroll-padding-top: 144px;
-                        scroll-behavior: smooth;
+                 html{
+                    font-size: 62.5%;
+                    overflow-x: hidden;
+                    scroll-padding-top: 144px;
+                    scroll-behavior: smooth;
                     }
                     
-                    html::-webkit-scrollbar{
-                        width: .8rem;
+                html::-webkit-scrollbar{
+                    width: .8rem;
                     }
                     
-                    html::-webkit-scrollbar-track{
-                        background: transparent;
+                html::-webkit-scrollbar-track{
+                    background: transparent;
                     }
                     
-                    html::-webkit-scrollbar-thumb{
-                        background: var(--main-color);
-                        border-radius: 5rem;
+                html::-webkit-scrollbar-thumb{
+                    background: var(--main-color);
+                    border-radius: 5rem;
                     }
                     
-                    body{
-                        background: var(--back) ;   
+                body{
+                    background: var(--back) ;   
                     }
                     
-                    section{
-                        padding: 2rem 7%;
+                section{
+                    padding: 2rem 7%;
                     }
                     
-                    .heading{
-                        text-align: center;
-                        text-transform: uppercase;
-                        color: #fff;
-                        padding-bottom: 3.5rem;
-                        font-size: 4rem;
+                .heading{
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: #fff;
+                    padding-bottom: 3.5rem;
+                    font-size: 4rem;
                     }
                     
-                    .heading span{
+                .heading span{
                         color: var(--main-color);
                         text-transform: uppercase;
                     }
@@ -643,7 +643,7 @@
                                 <img src="images/cart-item-1.png" alt="">
                                 <div class="content">
                                     <h3>cart item 01</h3>
-                                    <div class="price">₱15.00</div>
+                                    <div class="price">₱200.00</div>
                                 </div>
                             </div>
             
@@ -661,7 +661,7 @@
                                 <img src="images/cart-item-3.png" alt="">
                                 <div class="content">
                                     <h3>cart item 03</h3>
-                                    <div class="price">₱15.00</div>
+                                    <div class="price">₱200.00</div>
                                 </div>
                             </div>
             
@@ -670,7 +670,7 @@
                                 <img src="images/cart-item-4.png" alt="">
                                 <div class="content">
                                     <h3>cart item 04</h3>
-                                    <div class="price">₱15.00</div>
+                                    <div class="price">₱200.00</div>
                                 </div>
                             </div>
                             <a href="#" class="btn">checkout now</a>
@@ -723,42 +723,42 @@
                             <div class="box">
                                 <img src = "images/menu-1.png" alt="">
                                 <h3>tasty and healthy</h3>
-                                <div class="price">₱15.00 <span>20.00</span></div>
+                                <div class="price">₱200.00 <span>300.00</span></div>
                                 <a href="#" class="btn">add to cart</a>
                             </div>
                             
                             <div class="box">
                                 <img src = "images/menu-2.png" alt="">
                                 <h3>tasty and healthy</h3>
-                                <div class="price">₱15.00 <span>20.00</span></div>
+                                <div class="price">₱200.00 <span>300.00</span></div>
                                 <a href="#" class="btn">add to cart</a>
                             </div>
             
                             <div class="box">
                                 <img src = "images/menu-3.png" alt ="">
                                 <h3>tasty and healthy</h3>
-                                <div class="price">₱15.00 <span>20.00</span></div>
+                                <div class="price">₱200.00 <span>300.00</span></div>
                                 <a href="#" class="btn">add to cart</a>
                             </div>
                             
                             <div class="box">
                                 <img src = "images/menu-4.png" alt ="">
                                 <h3>tasty and healthy</h3>
-                                <div class="price">₱15.00 <span>20.00</span></div>
+                                <div class="price">₱200.00 <span>300.00</span></div>
                                 <a href="#" class="btn">add to cart</a>
                             </div>
             
                             <div class="box">
                                 <img src = "images/menu-5.png" alt ="">
                                 <h3>tasty and healthy</h3>
-                                <div class="price">₱15.00 <span>20.00</span></div>
+                                <div class="price">₱200.00 <span>300.00</span></div>
                                 <a href="#" class="btn">add to cart</a>
                             </div>
             
                             <div class="box">
                                 <img src = "images/menu-6.png" alt ="">
                                 <h3>tasty and healthy</h3>
-                                <div class="price">₱15.00 <span>20.00</span></div>
+                                <div class="price">₱200.00 <span>300.00</span></div>
                                 <a href="#" class="btn">add to cart</a>
                             </div>
                         </div>
@@ -788,7 +788,7 @@
                                         <i class="fa fa-star" ></i>
                                         <i class="fa fa-star-half-alt" ></i>
                                     </div>
-                                    <div class="price">₱15.00 <span>₱20.00</span></div>
+                                    <div class="price">₱200.00 <span>₱300.00</span></div>
                                 </div>
                             </div>
             
@@ -810,7 +810,7 @@
                                         <i class="fa fa-star" ></i>
                                         <i class="fa fa-star-half-alt" ></i>
                                     </div>
-                                    <div class="price">₱15.00 <span>₱20.00</span></div>
+                                    <div class="price">₱200.00 <span>₱300.00</span></div>
                                 </div>
                             </div>
              
@@ -832,7 +832,7 @@
                                         <i class="fa fa-star" ></i>
                                         <i class="fa fa-star-half-alt" ></i>
                                     </div>
-                                    <div class="price">₱15.00 <span>₱20.00</span></div>
+                                    <div class="price">₱200.00 <span>₱300.00</span></div>
                                 </div>
                             </div>
             
@@ -842,7 +842,7 @@
             
                     <!--review section stats-->
                     <section class="review" id="review">
-                        <h1 class="heading"> cutomer' s<span> review </span></h1>
+                        <h1 class="heading"> customer' s<span> review </span></h1>
                         <div class="box-container">
                             <div class="box">
                                 <img src="images/quote-img.png" alt="" class="quote">
@@ -961,7 +961,7 @@
                     <img src="images/cart-item-1.png" alt="">
                     <div class="content">
                         <h3>cart item 01</h3>
-                        <div class="price">₱15.00</div>
+                        <div class="price">₱200.00</div>
                     </div>
                 </div>
 
@@ -970,7 +970,7 @@
                     <img src="images/cart-item-2.png" alt="">
                     <div class="content">
                         <h3>cart item 02</h3>
-                        <div class="price">₱15.00</div>
+                        <div class="price">₱200.00</div>
                     </div>
                 </div>
 
@@ -979,7 +979,7 @@
                     <img src="images/cart-item-3.png" alt="">
                     <div class="content">
                         <h3>cart item 03</h3>
-                        <div class="price">₱15.00</div>
+                        <div class="price">₱200.00</div>
                     </div>
                 </div>
 
@@ -988,7 +988,7 @@
                     <img src="images/cart-item-4.png" alt="">
                     <div class="content">
                         <h3>cart item 04</h3>
-                        <div class="price">₱15.00</div>
+                        <div class="price">₱200.00</div>
                     </div>
                 </div>
                 <a href="#" class="btn">checkout now</a>
